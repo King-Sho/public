@@ -1,0 +1,11 @@
+--Variables--
+local character = game:GetService("Players").LocalPlayer.Character or game:GetService("Players").LocalPlayer.CharacterAppearanceLoaded:Wait()
+
+--Script--
+for i, child in ipairs(character:GetChildren()) do
+    if child:IsA("BasePart") and child ~= character:FindFirstChildWhichIsA("Humanoid").RootPart then
+        child.Transparency = 1
+    elseif child:IsA("Accessory") then
+        child:WaitForChild("Handle").Transparency = 1
+    end
+end
